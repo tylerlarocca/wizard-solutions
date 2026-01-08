@@ -1,0 +1,28 @@
+---
+type Item = { title: string; description: string; tag?: string };
+
+const { items, columns = 3 } = Astro.props as { items: Item[]; columns?: 2 | 3 | 4 };
+
+const cols =
+  columns === 2
+    ? "sm:grid-cols-2"
+    : columns === 3
+    ? "sm:grid-cols-2 lg:grid-cols-3"
+    : "sm:grid-cols-2 lg:grid-cols-4";
+---
+
+<div class={`grid gap-4 ${cols}`}>
+  {items.map((it) => (
+    <div class="rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition">
+      <div class="flex items-center justify-between gap-3">
+        <h3 class="font-medium">{it.title}</h3>
+        {it.tag ? (
+          <span class="rounded-full border border-white/10 bg-black/20 px-2 py-1 text-xs text-white/60">
+            {it.tag}
+          </span>
+        ) : null}
+      </div>
+      <p class="mt-2 text-sm text-white/70">{it.description}</p>
+    </div>
+  ))}
+</div>

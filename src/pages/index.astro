@@ -1,0 +1,92 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import Cards from "../components/Cards.astro";
+import ClientsStrip from "../components/ClientStrip.astro";
+import CTA from "../components/CTA.astro";
+import Testimonials from "../components/react/Testimonials";
+import { CONTENT } from "../lib/content";
+---
+
+<BaseLayout title="The Wizards Solutions / Armory" description="Engineering, automation, and growth systems—built like a product.">
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(1200px_circle_at_20%_0%,rgba(168,85,247,0.18),transparent_55%),radial-gradient(900px_circle_at_80%_20%,rgba(59,130,246,0.12),transparent_55%)]" />
+    <div class="mx-auto max-w-6xl px-5 py-20 relative">
+      <p class="text-sm text-white/60">Wizardry-grade engineering • Armory-level reliability</p>
+      <h1 class="mt-3 text-4xl font-semibold tracking-tight sm:text-6xl">
+        Build fast. Look premium. Automate the boring.
+        <span class="text-white/70"> The Armory for modern business.</span>
+      </h1>
+      <p class="mt-6 max-w-2xl text-base text-white/70">
+        We design and ship high-performance websites, full-stack apps, e-commerce systems, and automation workflows—
+        with clean architecture and measurable outcomes.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/contact" class="rounded-full bg-white px-5 py-3 text-sm font-medium text-zinc-950 hover:bg-white/90">
+          Get a quote
+        </a>
+        <a href="#services" class="rounded-full border border-white/10 px-5 py-3 text-sm hover:bg-white/5">
+          Explore services
+        </a>
+      </div>
+
+      <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        {[
+          { k: "Speed", v: "Ship in days/weeks" },
+          { k: "Quality", v: "Maintainable systems" },
+          { k: "SEO", v: "Rank + convert" },
+          { k: "Automation", v: "Less manual work" },
+        ].map((x) => (
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div class="text-sm font-medium">{x.k}</div>
+            <div class="text-sm text-white/60">{x.v}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Section
+    id="services"
+    kicker="What we do"
+    title="Services that move the needle"
+    description="Pick a single service or bundle them into a full build. Everything is built for performance + ROI."
+  >
+    <Cards items={CONTENT.services} columns={3} />
+  </Section>
+
+  <Section
+    kicker="Languages & platforms"
+    title="The toolkit"
+    description="Practical choices for speed, reliability, and clean maintenance."
+  >
+    <Cards items={CONTENT.stack} columns={4} />
+  </Section>
+
+  <Section
+    kicker="How you benefit"
+    title="Outcomes, not fluff"
+    description="You’ll get a cleaner system, faster site, better conversion, and less operational pain."
+  >
+    <Cards items={CONTENT.benefits} columns={3} />
+  </Section>
+
+  <Section
+    kicker="Trusted by"
+    title="Current clients & collaborators"
+    description="Replace these placeholders with real logos and links as you finalize."
+  >
+    <ClientsStrip />
+  </Section>
+
+  <Section
+    kicker="Testimonials"
+    title="What clients say"
+    description="Short and punchy. We can swap these with real testimonials later."
+  >
+    <Testimonials client:load />
+  </Section>
+
+  <CTA />
+</BaseLayout>

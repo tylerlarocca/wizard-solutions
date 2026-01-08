@@ -1,0 +1,16 @@
+---
+const clients = ["Outlier", "Backdraft", "Witt Machine", "Client Four", "Client Five", "Client Six"];
+---
+
+<div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+  <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+    {clients.map((c) => (
+      <div class="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-center text-sm text-white/70">
+        {c}
+      </div>
+    ))}
+  </div>
+  <p class="mt-4 text-xs text-white/50">
+    Replace placeholders with approved client logos/names.
+  </p>
+</div>
