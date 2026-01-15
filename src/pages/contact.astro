@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnjjnwgb";
 ---
 
 <BaseLayout title="Contact — The Wizards Solutions / Armory" description="Reach out for quotes, questions, or collaboration.">
@@ -30,6 +30,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
             method="POST"
             action={FORMSPREE_ENDPOINT}
           >
+           <input type="hidden" name="_redirect" value="/thanks" />
             <div class="grid gap-4 sm:grid-cols-2">
               <label class="block">
                 <span class="text-sm text-white/70">Name</span>
