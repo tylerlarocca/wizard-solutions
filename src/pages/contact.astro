@@ -4,9 +4,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnjjnwgb";
 ---
 
-<BaseLayout title="Contact — The Wizards Solutions / Armory" description="Reach out for quotes, questions, or collaboration.">
+<BaseLayout
+  title="Contact — Wizard Solutions"
+  description="Reach out for quotes, questions, or collaboration."
+>
   <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(900px_circle_at_20%_0%,rgba(168,85,247,0.16),transparent_55%),radial-gradient(800px_circle_at_80%_20%,rgba(59,130,246,0.10),transparent_55%)]" />
+    <div class="absolute inset-0 bg-[radial-gradient(900px_circle_at_20%_0%,rgba(168,85,247,0.16),transparent_55%),radial-gradient(800px_circle_at_80%_20%,rgba(59,130,246,0.10),transparent_55%)]"></div>
+
     <div class="relative mx-auto max-w-6xl px-5 py-16 sm:py-20">
       <div class="max-w-2xl">
         <p class="text-sm text-white/60">Contact</p>
@@ -30,7 +34,12 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnjjnwgb";
             method="POST"
             action={FORMSPREE_ENDPOINT}
           >
-           <input type="hidden" name="_redirect" value="/thanks" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://wizardsolutions.io/thanks"
+            />
+
             <div class="grid gap-4 sm:grid-cols-2">
               <label class="block">
                 <span class="text-sm text-white/70">Name</span>
@@ -59,7 +68,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnjjnwgb";
               <input
                 class="mt-2 w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm outline-none focus:border-white/20"
                 name="subject"
-                placeholder="Landing page, e-commerce, automation, full-stack app…"
+                placeholder="Landing page, social media presence, e-commerce, automation, full-stack app…"
               />
             </label>
 
@@ -68,7 +77,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnjjnwgb";
               <textarea
                 class="mt-2 w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm outline-none focus:border-white/20"
                 name="message"
-                rows={6}
+                rows="6"
                 required
                 placeholder="Tell me your goals, timeline, and any links you have…"
               ></textarea>
@@ -88,29 +97,29 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnjjnwgb";
           </form>
         </div>
 
+        {/* INFO CARD */}
         <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
           <h2 class="text-lg font-semibold">What happens next</h2>
           <ul class="mt-4 space-y-3 text-sm text-white/70">
             <li class="rounded-2xl border border-white/10 bg-black/20 p-4">
               <div class="font-medium text-white/85">1) Quick reply</div>
-              <div class="mt-1 text-white/60">I’ll ask a few clarifying questions and confirm scope.</div>
+              <div class="mt-1 text-white/60">
+                I’ll ask a few clarifying questions and confirm scope.
+              </div>
             </li>
             <li class="rounded-2xl border border-white/10 bg-black/20 p-4">
               <div class="font-medium text-white/85">2) Proposal</div>
-              <div class="mt-1 text-white/60">You’ll get a clear plan, timeline, and price.</div>
+              <div class="mt-1 text-white/60">
+                You’ll get a clear plan, timeline, and price.
+              </div>
             </li>
             <li class="rounded-2xl border border-white/10 bg-black/20 p-4">
               <div class="font-medium text-white/85">3) Build + iterate</div>
-              <div class="mt-1 text-white/60">Fast delivery, clean code, and measurable improvements.</div>
+              <div class="mt-1 text-white/60">
+                Fast delivery, clean systems, and measurable improvements.
+              </div>
             </li>
           </ul>
-
-          <div class="mt-6 rounded-2xl border border-white/10 bg-black/20 p-4">
-            <p class="text-xs text-white/60">
-              Tip: If you haven’t set up Formspree yet, replace <span class="text-white/80">YOUR_FORM_ID</span> above
-              with your form endpoint.
-            </p>
-          </div>
         </div>
       </div>
     </div>
