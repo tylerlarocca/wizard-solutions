@@ -2,18 +2,18 @@ import { useEffect, useState } from "react";
 
 const quotes = [
   {
-    name: "Client Name",
-    role: "Founder",
+    name: "Jack Callahan",
+    role: "CEO - Helping A Hero",
     text: "Fast, thoughtful, and obsessed with quality. Our site finally feels premium.",
   },
   {
-    name: "Client Name",
-    role: "Ops Lead",
+    name: "Rob Higgins",
+    role: "Co-Founder - Witt Machine",
     text: "Automation saved us hours every week. Clear communication the whole time.",
   },
   {
-    name: "Client Name",
-    role: "Marketing",
+    name: "Mike Reilly",
+    role: "Co-Founder - Backdraft Suppressors and Outlier",
     text: "Performance and SEO jumped quickly—and conversion followed.",
   },
 ];

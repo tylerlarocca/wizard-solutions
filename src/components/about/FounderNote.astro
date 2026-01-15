@@ -1,0 +1,87 @@
+---
+const {
+  image = "/images/founder/Family.JPG",
+  name = "Tyler LaRocca",
+} = Astro.props;
+---
+
+<section class="relative overflow-hidden">
+  <!-- Subtle background halo (SoftServe-ish vibe) -->
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute -top-24 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full blur-3xl
+                bg-[radial-gradient(circle_at_30%_30%,rgba(168,85,247,0.18),transparent_60%),
+                    radial-gradient(circle_at_70%_40%,rgba(59,130,246,0.14),transparent_62%)]">
+    </div>
+    <div class="absolute inset-0 bg-[radial-gradient(900px_circle_at_20%_10%,rgba(255,255,255,0.06),transparent_55%)]"></div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-5 py-16 sm:py-20 relative">
+    <!-- Mobile stacking: image/quote first, then text -->
+    <div class="grid gap-10 lg:grid-cols-2 lg:gap-12 items-start">
+      <!-- LEFT COLUMN -->
+      <div class="space-y-6">
+        <!-- Image card with subtle halo border glow -->
+        <div class="relative">
+          <div class="absolute -inset-6 -z-10 rounded-[32px] blur-2xl
+                      bg-[radial-gradient(closest-side,rgba(168,85,247,0.18),transparent_70%)]">
+          </div>
+
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-3">
+            <img
+              src={image}
+              alt={`${name} with family`}
+              class="w-full aspect-[4/3] rounded-2xl object-cover border border-white/10 bg-black/20"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Quote under image (left side) -->
+        <div class="relative rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-white/80">
+          <span class="absolute -top-3 left-4 text-3xl text-white/20">“</span>
+          If I don’t know the answer yet, I’ll figure it out — and I’ll be honest with you along the way.
+          <div class="mt-3 text-xs text-white/60">
+            — {name}
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div>
+        <p class="text-sm text-white/60">Founder’s Note</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+          Built on curiosity, trust, and problem-solving.
+        </h2>
+
+        <div class="mt-6 space-y-4 text-sm text-white/70 leading-relaxed">
+          <p>
+            I’ve always loved helping people figure things out — especially when the problem feels complicated,
+            technical, or overwhelming.
+          </p>
+
+          <p>
+            Long before this became a business, I was the person friends, founders, and organizations came to
+            when something wasn’t working. I’ve always been comfortable in the technical space, but what really
+            drew me in was finding solutions that actually helped people move forward.
+          </p>
+
+          <p>
+            This work isn’t just a job for me. It’s about relationships — working with good people, supporting
+            meaningful projects, and helping businesses and non-profits do more with the resources they have.
+          </p>
+
+          <p>
+            After seeing too many teams get burned by agencies and vendors, I wanted to offer something different:
+            a trusted technical partner you can rely on — without the cost or commitment of a full-time hire.
+          </p>
+
+          <p>
+            My background includes a Master’s degree in Education alongside formal technical training and real-world
+            software experience. That combination shapes how I work: clear communication, thoughtful execution,
+            and systems people actually understand.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

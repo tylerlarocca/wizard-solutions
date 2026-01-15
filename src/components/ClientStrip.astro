@@ -1,16 +1,65 @@
 ---
-const clients = ["Outlier", "Backdraft", "Witt Machine", "Client Four", "Client Five", "Client Six"];
+type Client = {
+  name: string;
+  logo: string;
+  href?: string;
+};
+
+const clients: Client[] = [
+  {
+    name: "Outlier",
+    logo: "/clients/Outlier.svg",
+    href: "https://getoutlier.com",
+  },
+  {
+    name: "Backdraft",
+    logo: "/clients/BackDraft.png",
+    href: "https://backdraftsuppressors.com",
+  },
+  {
+    name: "Witt Machine",
+    logo: "/clients/WittMachine.svg",
+    href: "https://wittmachine.net",
+  },
+  {
+    name: "HealCorp",
+    logo: "/clients/HealCorp.svg",
+    href: "https://www.heal-corp.org/",
+  },
+  {
+    name: "Helping a Hero",
+    logo: "/clients/HelpingHero.svg",
+    href: "https://helpingahero.org/",
+  },
+];
 ---
 
 <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-  <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+  <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
     {clients.map((c) => (
-      <div class="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-center text-sm text-white/70">
-        {c}
+      <div class="flex items-center justify-center rounded-xl border border-white/10 bg-black/20 px-4 py-3">
+        {c.href ? (
+          <a href={c.href} target="_blank" rel="noopener noreferrer">
+            <img
+              src={c.logo}
+              alt={`${c.name} logo`}
+              class="h-10 sm:h-12 w-auto opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0"
+              loading="lazy"
+            />
+          </a>
+        ) : (
+          <img
+            src={c.logo}
+            alt={`${c.name} logo`}
+            class="h-8 w-auto opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0"
+            loading="lazy"
+          />
+        )}
       </div>
     ))}
   </div>
+
   <p class="mt-4 text-xs text-white/50">
-    Replace placeholders with approved client logos/names.
+    Trusted by teams across software, e-commerce, and media.
   </p>
 </div>

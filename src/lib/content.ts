@@ -19,10 +19,10 @@ export const CONTENT = {
         "Checkout flows, integrations, coupons/rebates, product ops, and performance optimization.",
     },
     {
-      title: "Automation & Integrations",
-      tag: "Ops",
+      title: "Content Assistance",
+      tag: "Social Media",
       description:
-        "Zapier-like outcomes with custom reliability: pipelines, scraping, workflows, sync jobs.",
+        "Scroll-stopping photo, video, and social content that strengthens your brand and turns attention into action.",
     },
     {
       title: "AI Assistants / Tooling",
@@ -39,25 +39,44 @@ export const CONTENT = {
   ],
   stack: [
     {
-      title: "TypeScript",
-      description: "Typed, maintainable front-end and server logic.",
+      title: "Web Platforms",
+      description:
+        "Custom websites, landing pages, and WordPress builds designed to convert.",
     },
     {
-      title: "React",
-      description: "Modern UI patterns with clean component architecture.",
+      title: "Custom Software",
+      description:
+        "Tailored tools, dashboards, and integrations built around your workflows.",
     },
     {
-      title: "Astro",
-      description: "Static-first sites with blazing performance + SEO.",
+      title: "E-Commerce",
+      description:
+        "Product catalogs, checkout flows, and backend systems that scale with demand.",
     },
-    { title: "Node.js", description: "APIs and services built for scale." },
-    { title: "Postgres", description: "Reliable relational data modeling." },
-    { title: "Supabase", description: "Auth, storage, realtime—when needed." },
     {
-      title: "TailwindCSS",
-      description: "Rapid UI development with consistency.",
+      title: "Automation & Integrations",
+      description:
+        "Reduce manual work with smart workflows, APIs, and system connections.",
     },
-    { title: "Vercel", description: "Simple deployments and hosting." },
+    {
+      title: "Performance & SEO",
+      description:
+        "Fast load times, clean structure, and search-friendly architecture.",
+    },
+    {
+      title: "Content & Media",
+      description:
+        "Photography, video, and digital assets built for modern platforms.",
+    },
+    {
+      title: "Analytics & Optimization",
+      description:
+        "Track what matters, improve conversion, and refine continuously.",
+    },
+    {
+      title: "Cloud & Hosting",
+      description: "Secure deployments, monitoring, and long-term reliability.",
+    },
   ],
   benefits: [
     {
@@ -67,8 +86,7 @@ export const CONTENT = {
     },
     {
       title: "Look Premium",
-      description:
-        "Enterprise aesthetic with a distinctive wizardry/armory edge.",
+      description: "Enterprise aesthetic with a distinctive Wizard's edge.",
     },
     {
       title: "Rank Higher",
