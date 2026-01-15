@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnjjnwgb";
+const THANKS_URL = "https://localhost4321/thanks";
 ---
 
 <BaseLayout
@@ -23,78 +24,169 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnjjnwgb";
       </div>
 
       <div class="mt-10 grid gap-6 lg:grid-cols-2">
+        {/* FORM CARD */}
         <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
           <h2 class="text-lg font-semibold">Message me</h2>
           <p class="mt-2 text-sm text-white/60">
             Fill this out and it’ll go straight to my inbox.
           </p>
 
-          <form
-            class="mt-6 space-y-4"
-            method="POST"
-            action={FORMSPREE_ENDPOINT}
+          <!-- ✅ Success panel (hidden by default) -->
+          <div
+            id="contact-success"
+            class="mt-6 hidden rounded-2xl border border-white/10 bg-black/20 p-6"
           >
-            <input
-              type="hidden"
-              name="_next"
-              value="https://wizardsolutions.io/thanks"
-            />
+            <p class="text-sm text-white/60">Message received</p>
+            <h3 class="mt-2 text-2xl font-semibold tracking-tight">
+              Thanks — I got it.
+            </h3>
+            <p class="mt-3 text-sm text-white/70 leading-relaxed">
+              Your message was successfully submitted. I’ll get back to you soon.
+              If it’s urgent, email{" "}
+              <a
+                class="underline decoration-white/30 hover:decoration-white/70"
+                href="mailto:hello@wizardsolutions.io"
+              >
+                hello@wizardsolutions.io
+              </a>.
+            </p>
 
-            <div class="grid gap-4 sm:grid-cols-2">
-              <label class="block">
-                <span class="text-sm text-white/70">Name</span>
-                <input
-                  class="mt-2 w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm outline-none focus:border-white/20"
-                  name="name"
-                  required
-                  autocomplete="name"
-                />
-              </label>
-
-              <label class="block">
-                <span class="text-sm text-white/70">Email</span>
-                <input
-                  class="mt-2 w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm outline-none focus:border-white/20"
-                  name="email"
-                  type="email"
-                  required
-                  autocomplete="email"
-                />
-              </label>
-            </div>
-
-            <label class="block">
-              <span class="text-sm text-white/70">What are you building?</span>
-              <input
-                class="mt-2 w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm outline-none focus:border-white/20"
-                name="subject"
-                placeholder="Landing page, social media presence, e-commerce, automation, full-stack app…"
-              />
-            </label>
-
-            <label class="block">
-              <span class="text-sm text-white/70">Message</span>
-              <textarea
-                class="mt-2 w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm outline-none focus:border-white/20"
-                name="message"
-                rows="6"
-                required
-                placeholder="Tell me your goals, timeline, and any links you have…"
-              ></textarea>
-            </label>
-
-            <div class="flex flex-wrap items-center gap-3 pt-2">
-              <button
-                type="submit"
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a
+                href="/"
                 class="rounded-full bg-white px-6 py-3 text-sm font-medium text-zinc-950 hover:bg-white/90"
               >
-                Send message
-              </button>
-              <p class="text-xs text-white/50">
-                By submitting, you agree to be contacted back about your request.
-              </p>
+                Back to Home
+              </a>
+              <a
+                href="/contact"
+                class="rounded-full border border-white/10 px-6 py-3 text-sm hover:bg-white/5"
+              >
+                Send another message
+              </a>
             </div>
-          </form>
+          </div>
+
+          <!-- ✅ Form wrapper -->
+          <div id="contact-form-wrap" class="mt-6">
+            <form
+              id="contact-form"
+              class="space-y-4"
+              method="POST"
+              action="#"
+            >
+              <!-- Remove _next hidden field, not needed with JS redirect -->
+              <div class="grid gap-4 sm:grid-cols-2">
+                <label class="block">
+                  <span class="text-sm text-white/70">Name</span>
+                  <input
+                    class="mt-2 w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm outline-none focus:border-white/20"
+                    name="name"
+                    required
+                    autocomplete="name"
+                  />
+                </label>
+
+                <label class="block">
+                  <span class="text-sm text-white/70">Email</span>
+                  <input
+                    class="mt-2 w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm outline-none focus:border-white/20"
+                    name="email"
+                    type="email"
+                    required
+                    autocomplete="email"
+                  />
+                </label>
+              </div>
+
+              <label class="block">
+                <span class="text-sm text-white/70">What are you building?</span>
+                <input
+                  class="mt-2 w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm outline-none focus:border-white/20"
+                  name="subject"
+                  placeholder="Landing page, e-commerce, automation, full-stack app…"
+                />
+              </label>
+
+              <label class="block">
+                <span class="text-sm text-white/70">Message</span>
+                <textarea
+                  class="mt-2 w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm outline-none focus:border-white/20"
+                  name="message"
+                  rows="6"
+                  required
+                  placeholder="Tell me your goals, timeline, and any links you have…"
+                ></textarea>
+              </label>
+
+              <div class="flex flex-wrap items-center gap-3 pt-2">
+                <button
+                  type="submit"
+                  class="rounded-full bg-white px-6 py-3 text-sm font-medium text-zinc-950 hover:bg-white/90"
+                >
+                  Send message
+                </button>
+                <p class="text-xs text-white/50">
+                  By submitting, you agree to be contacted back about your request.
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <!-- ✅ Back-button + Formspree-return handling -->
+          <script>
+            (function () {
+              const form = document.getElementById("contact-form") as HTMLFormElement;
+              const wrap = document.getElementById("contact-form-wrap");
+              const success = document.getElementById("contact-success");
+              const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnjjnwgb";
+
+              function showSuccessAndClear() {
+                if (form) form.reset();
+                if (wrap) wrap.classList.add("hidden");
+                if (success) success.classList.remove("hidden");
+              }
+
+              function clearOnly() {
+                if (form) form.reset();
+              }
+
+              // AJAX form submission
+              if (form) {
+                form.addEventListener("submit", async function (e) {
+                  e.preventDefault();
+                  const data = new FormData(form);
+                  try {
+                    const res = await fetch(FORMSPREE_ENDPOINT, {
+                      method: "POST",
+                      body: data,
+                      headers: { Accept: "application/json" },
+                    });
+                    if (res.ok) {
+                      window.location.href = "/thanks";
+                    } else {
+                      alert("There was an error sending your message. Please try again or email hello@wizardsolutions.io.");
+                    }
+                  } catch {
+                    alert("There was an error sending your message. Please try again or email hello@wizardsolutions.io.");
+                  }
+                });
+              }
+
+              // 1) Always clear on pageshow (covers back/forward cache restore)
+              window.addEventListener("pageshow", () => {
+                clearOnly();
+                const ref = document.referrer || "";
+                if (ref.includes("formspree.io")) {
+                  showSuccessAndClear();
+                }
+              });
+              // 2) Also clear on initial load (extra safe)
+              window.addEventListener("DOMContentLoaded", () => {
+                clearOnly();
+              });
+            })();
+          </script>
         </div>
 
         {/* INFO CARD */}
@@ -120,6 +212,18 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnjjnwgb";
               </div>
             </li>
           </ul>
+
+          <div class="mt-6 rounded-2xl border border-white/10 bg-black/20 p-4">
+            <p class="text-xs text-white/60">
+              Prefer email? Reach me at{" "}
+              <a
+                class="underline decoration-white/30 hover:decoration-white/70"
+                href="mailto:hello@wizardsolutions.io"
+              >
+                hello@wizardsolutions.io
+              </a>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
