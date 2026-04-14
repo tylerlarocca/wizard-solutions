@@ -1,0 +1,42 @@
+---
+import type { IconNode } from "lucide";
+
+type Size = "sm" | "md" | "lg";
+
+interface Props {
+  icon: IconNode;
+  size?: Size;
+  class?: string;
+  "aria-label"?: string;
+}
+
+const { icon, size = "md", class: className = "", ...rest } = Astro.props as Props;
+
+const sizeClass: Record<Size, string> = {
+  sm: "h-4 w-4 sm:h-5 sm:w-5",
+  md: "h-5 w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7",
+  lg: "h-6 w-6 sm:h-8 sm:w-8 lg:h-10 lg:w-10",
+};
+
+const ariaLabel = rest["aria-label"];
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class={`${sizeClass[size]} ${className}`}
+  role={ariaLabel ? "img" : "presentation"}
+  aria-label={ariaLabel}
+  aria-hidden={ariaLabel ? undefined : "true"}
+>
+  {icon.map((node) => {
+    const [tag, attrs] = node;
+    const Tag = tag as any;
+    return <Tag {...attrs} />;
+  })}
+</svg>

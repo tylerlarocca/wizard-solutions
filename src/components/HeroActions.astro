@@ -1,0 +1,24 @@
+---
+const {
+  primaryHref = "/contact",
+  primaryLabel = "Get a quote",
+  secondaryHref = "#services",
+  secondaryLabel = "Explore services",
+} = Astro.props;
+---
+
+<div class="flex flex-wrap gap-3">
+  <a
+    href={primaryHref}
+    class="rounded-full bg-white px-5 py-3 text-sm font-medium text-zinc-950 hover:bg-white/90"
+  >
+    {primaryLabel}
+  </a>
+
+  <a
+    href={secondaryHref}
+    class="rounded-full border border-white/10 px-5 py-3 text-sm hover:bg-white/5"
+  >
+    {secondaryLabel}
+  </a>
+</div>

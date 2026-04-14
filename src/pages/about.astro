@@ -1,96 +1,130 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import HeroActions from "../components/HeroActions.astro";
 import FounderNote from "../components/about/FounderNote.astro";
 ---
 
-<BaseLayout title="About • Wizard Solutions" description="A trusted partner for websites, automation, content, and product-grade execution.">
+<BaseLayout
+  title="About • Wizard Solutions"
+  description="A trusted partner for websites, automation, internal tools, and product-grade systems shaped by experience across big tech, manufacturing, and healthcare."
+>
   <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(900px_circle_at_20%_0%,rgba(168,85,247,0.14),transparent_55%),radial-gradient(850px_circle_at_80%_10%,rgba(59,130,246,0.10),transparent_55%)] pointer-events-none"></div>
+    <div
+      class="absolute inset-0 bg-[radial-gradient(900px_circle_at_20%_0%,rgba(168,85,247,0.14),transparent_55%),radial-gradient(850px_circle_at_80%_10%,rgba(59,130,246,0.10),transparent_55%)] pointer-events-none"
+    >
+    </div>
 
-    <div class="relative mx-auto max-w-6xl px-5 py-16 sm:py-20">
-      <div class="max-w-3xl">
-        <p class="text-xs uppercase tracking-widest text-white/50">About</p>
-        <h1 class="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
-          Wizard Solutions
-          <span class="text-white/60"> — built on trust and follow-through.</span>
-        </h1>
+    <div class="relative">
+      <Section
+        as="h1"
+        size="lg"
+        kicker="About"
+        title="Wizard Solutions"
+        subtitle="Built on trust, execution, and real-world systems experience."
+        description="Wizard Solutions helps businesses and non-profits build better websites, internal tools, automation, and digital systems — backed by hands-on experience delivering software across big tech, manufacturing, and healthcare environments."
+      >
+        <HeroActions secondaryHref="/#services" />
 
-        <p class="mt-6 text-white/70 leading-relaxed">
-          I help businesses and non-profits build better websites, cleaner systems, and stronger content —
-          without the headache of juggling five different vendors.
-        </p>
-      </div>
-
-      <div class="mt-10 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-
-      <div class="mt-10 grid gap-4 sm:grid-cols-2">
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h2 class="font-medium">How we work</h2>
-          <p class="mt-2 text-sm text-white/70 leading-relaxed">
-            Discovery → plan → execution → measure. Clear milestones, fast feedback loops, and clean handoff.
-          </p>
-
-          <ul class="mt-4 space-y-2 text-sm text-white/60">
-            <li class="flex gap-2">
-              <span class="text-white/70">•</span> You always know what’s happening and why.
-            </li>
-            <li class="flex gap-2">
-              <span class="text-white/70">•</span> We ship in small, visible steps instead of “big reveals.”
-            </li>
-            <li class="flex gap-2">
-              <span class="text-white/70">•</span> Decisions get documented so nothing lives in someone’s head.
-            </li>
-          </ul>
+        <div
+          class="mt-10 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"
+        >
         </div>
 
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h2 class="font-medium">What you get</h2>
-          <p class="mt-2 text-sm text-white/70 leading-relaxed">
-            Production-ready delivery, performance wins, strong communication, and maintainable systems — no mystery box.
-          </p>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <h2 class="font-medium">How we work</h2>
+            <p class="mt-2 text-sm text-white/70 leading-relaxed">
+              Discovery → plan → execution → measure. The approach is shaped by
+              real product and systems work: clear milestones, fast feedback
+              loops, documented decisions, and delivery that stays grounded in
+              business outcomes.
+            </p>
 
-          <ul class="mt-4 space-y-2 text-sm text-white/60">
-            <li class="flex gap-2">
-              <span class="text-white/70">•</span> A site/product that looks premium and converts.
-            </li>
-            <li class="flex gap-2">
-              <span class="text-white/70">•</span> SEO + content that supports growth.
-            </li>
-            <li class="flex gap-2">
-              <span class="text-white/70">•</span> Automation and improvements that save time every week.
-            </li>
-          </ul>
+            <ul class="mt-4 space-y-2 text-sm text-white/60">
+              <li class="flex gap-2">
+                <span class="text-white/70">•</span> You always know what’s happening
+                and why.
+              </li>
+              <li class="flex gap-2">
+                <span class="text-white/70">•</span> We ship in small, visible steps
+                instead of “big reveals.”
+              </li>
+              <li class="flex gap-2">
+                <span class="text-white/70">•</span> Decisions get documented so nothing
+                lives in someone’s head.
+              </li>
+              <li class="flex gap-2">
+                <span class="text-white/70">•</span> Systems are designed to be practical,
+                maintainable, and aligned with how your team actually works.
+              </li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <h2 class="font-medium">What you get</h2>
+            <p class="mt-2 text-sm text-white/70 leading-relaxed">
+              Production-ready delivery, strong communication, maintainable
+              systems, and experience informed by building software in demanding
+              environments — from customer-facing products to operational tools
+              and business-critical workflows.
+            </p>
+
+            <ul class="mt-4 space-y-2 text-sm text-white/60">
+              <li class="flex gap-2">
+                <span class="text-white/70">•</span> A site, product, or internal tool
+                that looks premium and works reliably.
+              </li>
+              <li class="flex gap-2">
+                <span class="text-white/70">•</span> SEO, content, and digital strategy
+                that support growth.
+              </li>
+              <li class="flex gap-2">
+                <span class="text-white/70">•</span> Automation and workflow improvements
+                that save time every week.
+              </li>
+              <li class="flex gap-2">
+                <span class="text-white/70">•</span> Solutions shaped by experience with
+                large-scale systems, operational complexity, and regulated or
+                process-heavy environments.
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </Section>
     </div>
   </section>
 
   <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(850px_circle_at_15%_50%,rgba(59,130,246,0.08),transparent_60%),radial-gradient(850px_circle_at_85%_55%,rgba(168,85,247,0.08),transparent_60%)] pointer-events-none"></div>
+    <div
+      class="absolute inset-0 bg-[radial-gradient(850px_circle_at_15%_50%,rgba(59,130,246,0.08),transparent_60%),radial-gradient(850px_circle_at_85%_55%,rgba(168,85,247,0.08),transparent_60%)] pointer-events-none"
+    >
+    </div>
     <div class="relative">
       <FounderNote />
     </div>
-  </section>
-
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(700px_circle_at_50%_20%,rgba(255,255,255,0.05),transparent_70%)] pointer-events-none"></div>
-
     <div class="relative mx-auto max-w-6xl px-5 pb-20">
-      <div class="rounded-3xl border border-white/10 bg-white/5 p-7 sm:p-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div
+        class="rounded-3xl border border-white/10 bg-white/5 p-7 sm:p-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between"
+      >
         <div>
-          <h3 class="text-xl font-semibold tracking-tight">Want a reliable “full-time” partner — part-time cost?</h3>
+          <h3 class="text-xl font-semibold tracking-tight">
+            Want a reliable partner for websites, systems, and internal tools?
+          </h3>
           <p class="mt-2 text-sm text-white/70">
-            Tell me what you’re building and we’ll map a clean path forward.
+            Whether you're building a marketing site, modernizing operations,
+            or creating custom business software, we can map a clean path
+            forward.
           </p>
         </div>
 
-        <div class="flex gap-3">
-          <a href="/contact" class="rounded-full bg-white px-5 py-3 text-sm font-medium text-zinc-950 hover:bg-white/90">
-            Contact
-          </a>
-          <a href="/" class="rounded-full border border-white/10 px-5 py-3 text-sm hover:bg-white/5">
-            Back home
-          </a>
+        <div class="shrink-0">
+          <HeroActions
+            primaryHref="/contact"
+            primaryLabel="Contact"
+            secondaryHref="/"
+            secondaryLabel="Back home"
+          />
         </div>
       </div>
     </div>

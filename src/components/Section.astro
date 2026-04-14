@@ -1,12 +1,24 @@
 ---
-const { kicker, title, description, id } = Astro.props;
+const { kicker, title, subtitle, description, id, as = "h2", size = "md" } = Astro.props;
+const Heading = as;
+const headingClass =
+  size === "lg"
+    ? "mt-3 text-4xl font-semibold tracking-tight sm:text-5xl"
+    : "mt-3 text-2xl font-semibold tracking-tight sm:text-3xl";
+const subtitleClass =
+  size === "lg"
+    ? "block text-white/60 text-2xl sm:text-4xl"
+    : "block text-white/60 text-xl sm:text-2xl";
 ---
 
 <section class="mx-auto max-w-6xl px-5 py-16" id={id}>
-  <div class="mb-8">
+  <div class="mb-8 max-w-3xl">
     <p class="text-xs uppercase tracking-widest text-white/50">{kicker}</p>
-    <h2 class="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">{title}</h2>
-    {description ? <p class="mt-2 max-w-2xl text-white/70">{description}</p> : null}
+    <Heading class={headingClass}>
+      {title}
+      {subtitle ? <span class={subtitleClass}>{subtitle}</span> : null}
+    </Heading>
+    {description ? <p class="mt-6 max-w-2xl text-white/70 leading-relaxed">{description}</p> : null}
   </div>
   <div>
     <slot />
