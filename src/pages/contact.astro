@@ -24,14 +24,12 @@ const THANKS_URL = "https://wizardsolutions.io/thanks";
       </div>
 
       <div class="mt-10 grid gap-6 lg:grid-cols-2">
-        {/* FORM CARD */}
         <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
           <h2 class="text-lg font-semibold">Message me</h2>
           <p class="mt-2 text-sm text-white/60">
             Fill this out and it’ll go straight to my inbox.
           </p>
 
-          <!-- ✅ Success panel (hidden by default) -->
           <div
             id="contact-success"
             class="mt-6 hidden rounded-2xl border border-white/10 bg-black/20 p-6"
@@ -67,7 +65,6 @@ const THANKS_URL = "https://wizardsolutions.io/thanks";
             </div>
           </div>
 
-          <!-- ✅ Form wrapper -->
           <div id="contact-form-wrap" class="mt-6">
             <form
               id="contact-form"
@@ -75,7 +72,6 @@ const THANKS_URL = "https://wizardsolutions.io/thanks";
               method="POST"
               action="#"
             >
-              <!-- Remove _next hidden field, not needed with JS redirect -->
               <div class="grid gap-4 sm:grid-cols-2">
                 <label class="block">
                   <span class="text-sm text-white/70">Name</span>
@@ -133,7 +129,6 @@ const THANKS_URL = "https://wizardsolutions.io/thanks";
             </form>
           </div>
 
-          <!-- ✅ Back-button + Formspree-return handling -->
           <script>
             (function () {
               const form = document.getElementById("contact-form") as HTMLFormElement;
@@ -151,7 +146,6 @@ const THANKS_URL = "https://wizardsolutions.io/thanks";
                 if (form) form.reset();
               }
 
-              // AJAX form submission
               if (form) {
                 form.addEventListener("submit", async function (e) {
                   e.preventDefault();
@@ -173,7 +167,6 @@ const THANKS_URL = "https://wizardsolutions.io/thanks";
                 });
               }
 
-              // 1) Always clear on pageshow (covers back/forward cache restore)
               window.addEventListener("pageshow", () => {
                 clearOnly();
                 const ref = document.referrer || "";
@@ -181,7 +174,6 @@ const THANKS_URL = "https://wizardsolutions.io/thanks";
                   showSuccessAndClear();
                 }
               });
-              // 2) Also clear on initial load (extra safe)
               window.addEventListener("DOMContentLoaded", () => {
                 clearOnly();
               });
@@ -189,7 +181,6 @@ const THANKS_URL = "https://wizardsolutions.io/thanks";
           </script>
         </div>
 
-        {/* INFO CARD */}
         <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
           <h2 class="text-lg font-semibold">What happens next</h2>
           <ul class="mt-4 space-y-3 text-sm text-white/70">
